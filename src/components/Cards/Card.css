@@ -1,0 +1,86 @@
+.card-stack {
+  /* justify-items: center; */
+  display: grid;
+  grid: [gui] 1fr / [challenges] min(60vmin, 35ch);
+  /* grid: [gui] 1fr / [challenges] min(50vmin, 40ch); */
+}
+
+.card {
+  border: solid 0.1px rgba(0, 0, 0, 0.4);
+  aspect-ratio: 2/3;
+  /* max-height: 900px; */
+  /* min-height: 40dvh; */
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: var(--shadow-3);
+  grid-area: gui / challenges;
+  transition: transform 0.5s;
+  font-family: 'GothamRnd', 'Gotham Book', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+.question-button {
+  border: none;
+  background-color: #b1b1d9;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 22px;
+  font-size: 1.5em;
+  min-width: 300px;
+  max-width: 80vw;
+  font-weight: 500;
+  color: white;
+  transition: all 0.25s;
+  font-family: 'HelveticaLT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.question-button:hover {
+  /* background-color: #b1b1d9dc; */
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    aspect-ratio: 3/4;
+  }
+}
+
+.stacked {
+  transform: rotate(var(--r, 0deg)) translateY(var(--t, 0px));
+  transition: transform-origin 0.5s var(--ease-squish-4),
+    translate 0.25s var(--ease-in-out-3), rotate 0.5s var(--ease-squish-4);
+  transition: transform-origin 0.5s var(--ease-squish-4),
+    transform 0.25s var(--ease-in-out-3);
+}
+
+.drawed {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* .card:hover {
+  --t: -50px;
+} */
+
+.card:nth-of-type(5) {
+  --r: 0deg;
+}
+.card:nth-of-type(4) {
+  --r: calc(var(--scalar, 5) * 1deg);
+}
+.card:nth-of-type(3) {
+  --r: calc(var(--scalar, 5) * 1deg * -1);
+}
+.card:nth-of-type(2) {
+  --r: calc(var(--scalar, 5) * 2 * 1deg);
+}
+.card:nth-of-type(1) {
+  --r: calc(var(--scalar, 5) * 2 * 1deg * -1);
+}
