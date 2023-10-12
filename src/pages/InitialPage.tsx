@@ -1,11 +1,5 @@
 import CardInitial from '../components/Cards/CardInitial'
 
-enum Phases {
-  INICIO = 'Inicio',
-  EMPRESAS = 'Empresas',
-  PERSONAL = 'Personal',
-}
-
 export default function InitialPage({
   setPhase,
   children,
