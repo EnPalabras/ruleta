@@ -1,4 +1,5 @@
 import { Switch } from '@material-tailwind/react'
+import logoImg from '../assets/images/logo.png'
 
 const ArrowLeft = ({ setPhase }: { setPhase: any }) => {
   return (
@@ -67,7 +68,7 @@ export default function Header({
         </div>{' '}
         <div className="text-center my-auto items-start w-full max-w-[400px]">
           <img
-            src="./src/assets/images/logo.png"
+            src={logoImg}
             alt="logo"
             className="
         object-scale-down
@@ -118,7 +119,7 @@ export function InitHeader({}: {}) {
         "
         >
           <img
-            src="./src/assets/images/logo.png"
+            src={logoImg}
             alt="logo"
             className="
         object-scale-down

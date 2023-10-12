@@ -2,6 +2,8 @@ import './Card.css'
 import { PREGUNTAS } from '../../data/preguntas'
 import { useState } from 'react'
 import { Dialog } from '@material-tailwind/react'
+import descPhoto from '../../assets/images/desconectados.png'
+import destPhoto from '../../assets/images/destapados.png'
 
 export default function Card() {
   const [debounce, setDebounce] = useState(false)
@@ -134,13 +136,13 @@ export default function Card() {
           </p>
           <div className="flex flex-row justify-evenly w-full items-center px-4 w-md">
             <img
-              src="./src/assets/images/desconectados.png"
+              src={descPhoto}
               alt="Desconectados"
               className="w-36 h-36 md:w-48 md:h-48"
             />
             <img
-              src="./src/assets/images/destapados.png"
-              alt="Desconectados"
+              src={destPhoto}
+              alt="Destapados"
               className="w-36 h-36 md:w-48 md:h-48"
             />
           </div>

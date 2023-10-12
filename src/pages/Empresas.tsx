@@ -1,4 +1,5 @@
 import Card from '../components/Cards/Card'
+import bgImg from '../assets/backgrounds/bgEmpresas.png'
 
 export default function Empresas({ children }: { children: any }) {
   return (
@@ -7,6 +8,9 @@ export default function Empresas({ children }: { children: any }) {
       className="flex flex-col 
     justify-between items-center pb-8
     "
+      style={{
+        backgroundImage: `url(${bgImg})`,
+      }}
     >
       {children}
       <Card />

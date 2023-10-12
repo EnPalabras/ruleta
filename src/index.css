@@ -16,7 +16,7 @@
 }
 
 #empresas {
-  background-image: url('./assets/backgrounds/bgEmpresas.png');
+  /* background-image: url('./assets/backgrounds/bgEmpresas.png'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -24,7 +24,7 @@
 }
 
 #personas {
-  background-image: url('./assets/backgrounds/bgPersonas.png');
+  /* background-image: url('./assets/backgrounds/bgPersonas.png'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
