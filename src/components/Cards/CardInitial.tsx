@@ -1,7 +1,7 @@
 import './Card.css'
 import React from 'react'
 import { Dialog, Checkbox, Input } from '@material-tailwind/react'
-import { createNewContact } from '../../services/SubmitCard'
+// import { createNewContact } from '../../services/SubmitCard'
 
 export default function CardInitial({ setPhase }: { setPhase: any }) {
   const [open, setOpen] = React.useState(false)
