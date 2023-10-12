@@ -13,10 +13,6 @@ export default function InitialPage({
   setPhase: any
   children: any
 }) {
-  const handleEmpresa = () => {
-    setPhase(Phases.EMPRESAS)
-  }
-
   return (
     <main
       id="inicio"

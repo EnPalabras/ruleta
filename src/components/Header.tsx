@@ -1,11 +1,5 @@
 import { Switch } from '@material-tailwind/react'
 
-enum Phases {
-  INICIO = 'Inicio',
-  EMPRESAS = 'Empresas',
-  PERSONAL = 'Personal',
-}
-
 const ArrowLeft = ({ setPhase }: { setPhase: any }) => {
   return (
     <svg
@@ -86,7 +80,7 @@ export default function Header({
         
       "
         >
-          <Switch defaultChecked />
+          <Switch defaultChecked crossOrigin />
         </div>
       </div>
 
@@ -137,7 +131,7 @@ export function InitHeader({}: {}) {
         
       "
         >
-          <Switch defaultChecked />
+          <Switch defaultChecked crossOrigin />
         </div>
       </div>
 

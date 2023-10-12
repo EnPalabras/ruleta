@@ -14,17 +14,16 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
     checked: false,
     type: '',
   })
-  const props = { email, setEmail }
 
   const saveToLocal = (): void => {
     localStorage.setItem('email', email)
   }
 
-  const uploadContact = async (): Promise<void> => {
-    if (!email || email.length < 6 || !email.includes('@')) return
-    const response = await createNewContact(email)
-    console.log(response)
-  }
+  //   const uploadContact = async (): Promise<void> => {
+  //     if (!email || email.length < 6 || !email.includes('@')) return
+  //     const response = await createNewContact(email)
+  //     console.log(response)
+  //   }
 
   const continueAsCompany = async (): Promise<void> => {
     saveToLocal()

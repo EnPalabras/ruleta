@@ -1,4 +1,4 @@
-export async function SubmitCard(tirada: Tirada) {
+export async function SubmitCard(tirada: any) {
   const response = await fetch('https://ruleta-empresa.vercel.app/api', {
     method: 'POST',
     headers: {
