@@ -1,6 +1,5 @@
 import Card from '../components/Cards/Card'
 import bgImg from '../assets/backgrounds/bgPersonas.png'
-import Footer from '../components/Footer'
 
 export default function Personas({
   children,
