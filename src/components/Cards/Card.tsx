@@ -113,7 +113,7 @@ export default function Card() {
         </div>
       </div>
       <div
-        className="h-full md:h-auto flex justify-end gap-12 
+        className="h-full md:h-auto flex justify-end gap-6 
       md:gap-0 items-end flex-col w-full"
       >
         <button className="mx-auto question-button text-xl" onClick={drawCards}>

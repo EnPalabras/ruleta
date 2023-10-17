@@ -64,7 +64,7 @@ export default function Header({
   bgColor: boolean
 }) {
   return (
-    <nav className="flex flex-col justify-between w-full mt-8 items-start">
+    <nav className="flex flex-col justify-between w-full my-10 items-start min-h-[80px] md:min-h-0">
       <div className="flex flex-row justify-between w-full items-start">
         <div className="w-full text-center my-auto w-1/5 md:w-full">
           <ArrowLeft setPhase={setPhase} />
@@ -100,31 +100,13 @@ export default function Header({
           </label>
         </div>
       </div>
-
-      <div className="flex md:hidden flex-row justify-between w-full items-start">
-        <div
-          className="w-full text-center my-auto w-1/5 md:w-full
-            
-      "
-        >
-          <a href="https://www.instagram.com/enpalabrass/" target="_blank">
-            <ShopCart />
-          </a>
-        </div>{' '}
-        <div className="w-full max-w-[400px]"></div>
-        <div
-          className="w-full w-1/5 md:w-full
-        
-      "
-        ></div>
-      </div>
     </nav>
   )
 }
 
 export function InitHeader({}: {}) {
   return (
-    <nav className="flex flex-col justify-between w-full mt-8 items-start">
+    <nav className="flex flex-col justify-between w-full my-10 items-start min-h-[80px] md:min-h-0">
       <div className="flex flex-row justify-between w-full items-start">
         <div className="w-full text-center my-auto w-1/5 md:w-full"></div>{' '}
         <div
@@ -142,28 +124,6 @@ export function InitHeader({}: {}) {
           />
         </div>
         <div className="w-full text-center my-auto w-1/5 md:w-full"></div>
-      </div>
-
-      <div className="flex md:hidden flex-row justify-between w-full items-start">
-        <div
-          className="w-full text-center my-auto w-1/5 md:w-full
-            
-      "
-        >
-          <a
-            href="https://www.instagram.com/enpalabrass/"
-            target="_blank"
-            // className="hidden"
-          >
-            <ShopCart />
-          </a>
-        </div>{' '}
-        <div className=" w-full max-w-[400px]"></div>
-        <div
-          className="w-full w-1/5 md:w-full
-        
-      "
-        ></div>
       </div>
     </nav>
   )
