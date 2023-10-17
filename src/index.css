@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Gotham Book';
-  src: url('./assets/fonts/Gotham-Ultra.woff') format('woff');
+  font-family: 'Gotham Ultra';
+  src: url('./assets/fonts/Gotham-Ultra.ttf') format('truetype');
 }
 @font-face {
   font-family: 'HelveticaLT';
@@ -13,6 +13,16 @@
 @font-face {
   font-family: 'GothamRnd';
   src: url('./assets/fonts/GothamRnd-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('./assets/fonts/GothamRnd-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('./assets/fonts/GothamRnd-Book.otf') format('opentype');
 }
 
 #empresas {

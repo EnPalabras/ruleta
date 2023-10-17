@@ -84,7 +84,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
             text-[#AFB0DE]
             "
           style={{
-            fontFamily: 'Gotham Book',
+            fontFamily: 'Gotham Ultra',
             color: '#AFB0DE',
           }}
         >
@@ -97,7 +97,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
           </span>
           <span>PARA CONECTAR</span>
           <div
-            className="bg-black text-white text-left pl-2 pr-8 md:pr-16 py-0.5 leading-3
+            className="bg-black text-white text-left pl-2 pr-8 md:pr-16 py-0.5 leading-[10px]
             rotate-[-6deg]
             transform
             translate-y-[0px] translate-x-[50px]
@@ -141,6 +141,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
         className="bg-[#AFB0DE]"
         style={{
           borderRadius: '22px',
+          fontFamily: 'GothamRnd',
         }}
       >
         <div className="my-8 w-full flex flex-col gap-8 items-center">
@@ -177,6 +178,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 htmlFor="empresa"
                 style={{
                   userSelect: 'none',
+                  fontFamily: 'Gotham Bold',
                 }}
                 className="text-md text-gray-900 font-light text-lg sm:font-base"
               >
@@ -206,6 +208,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 htmlFor="personal"
                 style={{
                   userSelect: 'none',
+                  fontFamily: 'Gotham Bold',
                 }}
                 className="text-md text-gray-900 font-light text-lg sm:font-base"
               >
@@ -256,6 +259,9 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 text-gray-900 text-md
                 "
               onClick={handleContinue}
+              style={{
+                fontFamily: 'Gotham Book',
+              }}
             >
               Enviar
             </button>

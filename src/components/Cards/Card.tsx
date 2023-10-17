@@ -73,7 +73,7 @@ export default function Card() {
             text-[#AFB0DE]
             "
           style={{
-            fontFamily: 'Gotham Book',
+            fontFamily: 'Gotham Ultra',
             color: '#AFB0DE',
           }}
         >
@@ -86,7 +86,7 @@ export default function Card() {
           </span>
           <span>PARA CONECTAR</span>
           <div
-            className="bg-black text-white text-left pl-2 pr-8 md:pr-16 py-0.5 leading-3
+            className="bg-black text-white text-left pl-2 pr-8 md:pr-16 py-0.5 leading-[10px]
             rotate-[-6deg]
             transform
             translate-y-[0px] translate-x-[50px]
@@ -129,15 +129,21 @@ export default function Card() {
         className="bg-[#AFB0DE]"
         style={{
           borderRadius: '22px',
+          fontFamily: 'GothamRnd',
         }}
       >
         <div className="my-8 w-full flex flex-col gap-8 md:gap-4 items-center">
-          <p className="text-black text-lg dark:text-gray-400 text-center">
+          <p
+            className="text-black text-lg text-center"
+            style={{
+              fontFamily: 'Gotham Book',
+            }}
+          >
             ¿Estas conectando con estas preguntas?
           </p>
           <p
-            className="text-gray-900 text-2xl max-w-xl 
-          px-6 dark:text-gray-400 text-center"
+            className="text-gray-900 text-xl max-w-xl 
+          px-6 text-center"
           >
             ¿Sabías que realizamos{' '}
             <b className="font-bold">cartas personalizadas</b> y opciones de
@@ -155,17 +161,22 @@ export default function Card() {
               className="w-36 h-36 md:w-48 md:h-48"
             />
           </div>
-          <p className="font-bold text-gray-900 text-xl max-w-md px-2 dark:text-gray-400 text-center">
+          <p className="font-bold text-gray-900 text-xl max-w-md px-2 text-center">
             Podemos ser tu próximo regalo empresarial, hecho a tu medida
           </p>
           <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
-            <button
-              className="bg-gray-100 hover:bg-gray-200 rounded-md py-2 px-6 
+            <a href="https://www.enpalabras.com.ar">
+              <button
+                className="bg-gray-100 hover:bg-gray-200 rounded-md py-2 px-6 
                 text-gray-900 text-lg min-w-[300px]
                 "
-            >
-              Conocer más
-            </button>
+                style={{
+                  fontFamily: 'Gotham Book',
+                }}
+              >
+                Conocer más
+              </button>
+            </a>
           </div>{' '}
         </div>
       </Dialog>

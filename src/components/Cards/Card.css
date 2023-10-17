@@ -15,7 +15,7 @@
   box-shadow: var(--shadow-3);
   grid-area: gui / challenges;
   transition: transform 0.3s;
-  font-family: 'GothamRnd', 'Gotham Book', 'Helvetica Neue', Helvetica, Arial,
+  font-family: 'Gotham Bold', 'Gotham Ultra', 'Helvetica Neue', Helvetica, Arial,
     sans-serif;
   font-weight: 700;
   text-align: center;
