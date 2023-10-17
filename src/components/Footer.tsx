@@ -72,7 +72,11 @@ export default function Footer() {
         className="flex flex-row justify-start items-center w-full
     text-2xl gap-2 md:gap-4 ml-2 md:ml-8"
       >
-        <a href="https://www.enpalabras.com.ar" className="p-0 m-0">
+        <a
+          href="https://www.enpalabras.com.ar"
+          className="p-0 m-0"
+          target="_blank"
+        >
           <button className="p-0.5 pr-1 bg-black text-white rounded-lg">
             <CartIcon />
           </button>
@@ -82,13 +86,21 @@ export default function Footer() {
         className="flex flex-row justify-end items-center w-full
     text-2xl gap-2 md:gap-4 mr-2 md:mr-8"
       >
-        <a href="https://www.instagram.com/enpalabrass" className="p-0 m-0">
+        <a
+          href="https://www.instagram.com/enpalabrass"
+          className="p-0 m-0"
+          target="_blank"
+        >
           <button className="p-0.5 bg-black text-white rounded-lg">
             <InstagramIcon />
           </button>
         </a>
 
-        <a href="https://www.tiktok.com/enpalabrass" className="p-0 m-0">
+        <a
+          href="https://www.tiktok.com/enpalabrass"
+          className="p-0 m-0"
+          target="_blank"
+        >
           <button className="p-0.5 bg-black text-white rounded-lg">
             <TikTokIcon />
           </button>

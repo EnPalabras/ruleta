@@ -165,7 +165,7 @@ export default function Card() {
             Podemos ser tu próximo regalo empresarial, hecho a tu medida
           </p>
           <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
-            <a href="https://www.enpalabras.com.ar">
+            <a href="https://www.enpalabras.com.ar" target="_blank">
               <button
                 className="bg-gray-100 hover:bg-gray-200 rounded-md py-2 px-6 
                 text-gray-900 text-lg min-w-[300px]
