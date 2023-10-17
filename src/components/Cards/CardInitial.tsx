@@ -1,12 +1,16 @@
 import './Card.css'
 import React from 'react'
 import { Dialog, Checkbox, Input } from '@material-tailwind/react'
+import Footer from '../Footer'
 // import { createNewContact } from '../../services/SubmitCard'
 
 export default function CardInitial({ setPhase }: { setPhase: any }) {
   const [open, setOpen] = React.useState(false)
   const [email, setEmail] = React.useState<string>('')
-  const [error, setError] = React.useState<boolean>(false)
+  const [error, setError] = React.useState({
+    error: false,
+    message: '',
+  })
 
   const handleOpen = () => setOpen(!open)
 
@@ -39,10 +43,20 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
   const handleContinue = async (): Promise<void> => {
     try {
       if (!checked.checked) {
-        setError(true)
+        setError({
+          error: true,
+          message: 'Selecciona una opción',
+        })
         return
       }
       if (checked.type === 'empresa') {
+        if (!email || email.length < 6 || !email.includes('@')) {
+          setError({
+            error: true,
+            message: 'Ingresa un correo válido',
+          })
+          return
+        }
         await continueAsCompany()
       } else if (checked.type === 'personal') {
         await continueAsUser()
@@ -109,121 +123,145 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
           </div>
         </div>
       </div>
-      <div className="h-full md:h-auto flex items-end">
-        <button className="question-button text-3xl" onClick={handleOpen}>
+      <div
+        className="h-full md:h-auto flex justify-end gap-12 
+      md:gap-0 items-end flex-col w-full"
+      >
+        <button
+          className="mx-auto question-button text-3xl"
+          onClick={handleOpen}
+        >
           Empezar
         </button>
-        <Dialog
-          open={open}
-          handler={handleOpen}
-          className="bg-[#AFB0DE]"
-          style={{
-            borderRadius: '22px',
-          }}
-        >
-          <div className="my-8 w-full flex flex-col gap-8 items-center">
-            <div className="flex flex-row justify-around items-center w-full">
-              <p className="text-gray-900 text-2xl dark:text-gray-400 text-center">
-                Personaliza tu experiencia
-              </p>
-            </div>
-            <div
-              className={`flex flex-col md:flex-row gap-4 md:gap-8 w-4/5
+        <Footer />
+      </div>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        className="bg-[#AFB0DE]"
+        style={{
+          borderRadius: '22px',
+        }}
+      >
+        <div className="my-8 w-full flex flex-col gap-8 items-center">
+          <div className="flex flex-row justify-around items-center w-full">
+            <p className="text-gray-900 text-2xl dark:text-gray-400 text-center">
+              Personaliza tu experiencia
+            </p>
+          </div>
+          <div
+            className={`flex flex-col md:flex-row gap-4 md:gap-8 w-4/5
               justify-around md:items-center px-4 select-none sm:w-2/3
             `}
-            >
-              <div className="flex flex-row items-center">
-                <Checkbox
-                  id="empresa"
-                  crossOrigin={true}
-                  className={`focus:ring-0 border border-gray-900 color-gray-900 bg-transparent
-                    ${error && 'border-solid border-2 border-red-500'}
+          >
+            <div className="flex flex-row items-center">
+              <Checkbox
+                id="empresa"
+                crossOrigin={true}
+                className={`focus:ring-0 border border-gray-900 color-gray-900 bg-transparent
+                    ${error.error && 'border-solid border-2 border-red-500'}
                   `}
-                  checked={checked.type === 'empresa' ? checked.checked : false}
-                  onChange={() => {
-                    setChecked({
-                      checked: true,
-                      type: 'empresa',
-                    })
-                    setError(false)
-                  }}
-                />{' '}
-                <label
-                  htmlFor="empresa"
-                  style={{
-                    userSelect: 'none',
-                  }}
-                  className="text-md text-gray-900 font-light text-lg sm:font-base"
-                >
-                  EMPRESA
-                </label>
-              </div>
-              <div className="flex flex-row items-center">
-                <Checkbox
-                  id="personal"
-                  crossOrigin={true}
-                  className={`focus:ring-0 border border-gray-900 bg-transparent
-                    ${error && 'border-solid border-2 border-red-500'}
-                  `}
-                  checked={
-                    checked.type === 'personal' ? checked.checked : false
-                  }
-                  onChange={() => {
-                    setChecked({
-                      checked: true,
-                      type: 'personal',
-                    })
-                    setError(false)
-                  }}
-                />{' '}
-                <label
-                  htmlFor="personal"
-                  style={{
-                    userSelect: 'none',
-                  }}
-                  className="text-md text-gray-900 font-light text-lg sm:font-base"
-                >
-                  PERSONAL
-                </label>
-              </div>
+                checked={checked.type === 'empresa' ? checked.checked : false}
+                onChange={() => {
+                  setChecked({
+                    checked: true,
+                    type: 'empresa',
+                  })
+                  setError({
+                    error: false,
+                    message: '',
+                  })
+                }}
+              />{' '}
+              <label
+                htmlFor="empresa"
+                style={{
+                  userSelect: 'none',
+                }}
+                className="text-md text-gray-900 font-light text-lg sm:font-base"
+              >
+                EMPRESA
+              </label>
             </div>
-            <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
-              <div className="w-full text-gray-900 rounded-none">
-                <Input
-                  label="E-Mail"
-                  crossOrigin={true}
-                  //   placeholder="E-Mail"
-                  color="black"
-                  value={email}
-                  variant="standard"
-                  onChange={(e) => {
-                    setEmail(e.target.value)
-                    setError(false)
-                  }}
-                  className="rounded-none
+            <div className="flex flex-row items-center">
+              <Checkbox
+                id="personal"
+                crossOrigin={true}
+                className={`focus:ring-0 border border-gray-900 bg-transparent
+                    ${error.error && 'border-solid border-2 border-red-500'}
+                  `}
+                checked={checked.type === 'personal' ? checked.checked : false}
+                onChange={() => {
+                  setChecked({
+                    checked: true,
+                    type: 'personal',
+                  })
+                  setError({
+                    error: false,
+                    message: '',
+                  })
+                }}
+              />{' '}
+              <label
+                htmlFor="personal"
+                style={{
+                  userSelect: 'none',
+                }}
+                className="text-md text-gray-900 font-light text-lg sm:font-base"
+              >
+                PERSONAL
+              </label>
+            </div>
+          </div>
+          {
+            <div className="text-center">
+              <p
+                className={`text-sm text-red-500 ${
+                  error.error ? 'block' : 'hidden'
+                }`}
+              >
+                {error.message}
+              </p>
+            </div>
+          }
+          <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
+            <div className="w-full text-gray-900 rounded-none">
+              <Input
+                crossOrigin={true}
+                label="E-Mail"
+                color="black"
+                value={email}
+                variant="standard"
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  setError({
+                    error: false,
+                    message: '',
+                  })
+                }}
+                className="rounded-none
                     !border-b !border-gray-900
                     cursor-auto
                     placeholder-gray-900
                     
                   "
-                  style={{
-                    caretColor: 'black',
-                    color: 'black',
-                  }}
-                />
-              </div>
-              <button
-                className="bg-gray-100 hover:bg-gray-200 rounded-md py-2 px-6 
+                style={{
+                  caretColor: 'black',
+                  color: 'black',
+                }}
+              />
+            </div>
+            <button
+              className="bg-gray-100 hover:bg-gray-200 rounded-md py-2 px-6 
                 text-gray-900 text-md
                 "
-                onClick={handleContinue}
-              >
-                Enviar
-              </button>
-            </div>{' '}
-          </div>
-        </Dialog>
-      </div>
+              onClick={handleContinue}
+            >
+              Enviar
+            </button>
+          </div>{' '}
+        </div>
+      </Dialog>
     </>
   )
 }

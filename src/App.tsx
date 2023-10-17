@@ -13,6 +13,7 @@ enum Phases {
 
 function App() {
   const [phase, setPhase] = useState<Phases>(Phases.INICIO)
+  const [bgColor, setBgColor] = useState<boolean>(true)
 
   return (
     <>
@@ -23,13 +24,21 @@ function App() {
         </InitialPage>
       )}
       {phase === Phases.EMPRESAS && (
-        <Empresas>
-          <Header setPhase={() => setPhase(Phases.INICIO)} />
+        <Empresas bgColor={bgColor}>
+          <Header
+            setPhase={() => setPhase(Phases.INICIO)}
+            setBgColor={setBgColor}
+            bgColor={bgColor}
+          />
         </Empresas>
       )}
       {phase === Phases.PERSONAL && (
-        <Personas>
-          <Header setPhase={() => setPhase(Phases.INICIO)} />
+        <Personas bgColor={bgColor}>
+          <Header
+            setPhase={() => setPhase(Phases.INICIO)}
+            setBgColor={setBgColor}
+            bgColor={bgColor}
+          />
         </Personas>
       )}
     </>

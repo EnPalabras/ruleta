@@ -11,7 +11,7 @@ export default function InitialPage({
     <main
       id="inicio"
       className="flex flex-col 
-    justify-between items-center pb-8
+    justify-between items-center
     "
     >
       {children}

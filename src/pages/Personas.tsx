@@ -1,15 +1,22 @@
 import Card from '../components/Cards/Card'
 import bgImg from '../assets/backgrounds/bgPersonas.png'
+import Footer from '../components/Footer'
 
-export default function Personas({ children }: { children: any }) {
+export default function Personas({
+  children,
+  bgColor,
+}: {
+  children: any
+  bgColor: boolean
+}) {
   return (
     <main
-      id="personas"
+      id={bgColor ? 'personas' : 'inicio'}
       className="flex flex-col 
-    justify-between items-center pb-8
+    justify-between items-center
     "
       style={{
-        backgroundImage: `url(${bgImg})`,
+        backgroundImage: `${bgColor ? `url(${bgImg})` : 'none'}`,
       }}
     >
       {children}

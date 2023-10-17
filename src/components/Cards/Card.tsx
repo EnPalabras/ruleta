@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Dialog } from '@material-tailwind/react'
 import descPhoto from '../../assets/images/desconectados.png'
 import destPhoto from '../../assets/images/destapados.png'
+import audio from '../../assets/audio.mp3'
+import Footer from '../Footer'
 
 export default function Card() {
   const [debounce, setDebounce] = useState(false)
@@ -35,24 +37,26 @@ export default function Card() {
   }
 
   const drawCards = () => {
+    const audioElement = new Audio(audio)
     setCounter(counter + 1)
     if (counter === 2) {
       handleOpen()
       return
     }
     if (debounce) return
+    audioElement.play()
     setDebounce(true)
     let iterations = 0
     const interval = setInterval(() => {
       addCard()
       iterations++
-      if (iterations > 5) {
+      if (iterations > 4) {
         clearInterval(interval)
       }
-    }, 300)
+    }, 330)
     setTimeout(() => {
       setDebounce(false)
-    }, 3000)
+    }, 2500)
   }
 
   return (
@@ -108,11 +112,16 @@ export default function Card() {
           </div>
         </div>
       </div>
-      <div className="h-full md:h-auto flex items-end">
-        <button className="question-button text-xl" onClick={drawCards}>
+      <div
+        className="h-full md:h-auto flex justify-end gap-12 
+      md:gap-0 items-end flex-col w-full"
+      >
+        <button className="mx-auto question-button text-xl" onClick={drawCards}>
           Siguiente Pregunta
         </button>
+        <Footer />
       </div>
+
       <Dialog
         open={open}
         size="md"
