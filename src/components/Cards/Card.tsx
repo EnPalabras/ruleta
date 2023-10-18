@@ -113,8 +113,8 @@ export default function Card() {
         </div>
       </div>
       <div
-        className="h-full md:h-auto flex justify-end gap-6 
-      md:gap-0 items-end flex-col w-full"
+        className="h-full md:h-auto flex justify-end  gap-3 
+      sm:gap-0 items-end flex-col w-full"
       >
         <button className="mx-auto question-button text-xl" onClick={drawCards}>
           Siguiente Pregunta
@@ -126,20 +126,31 @@ export default function Card() {
         open={open}
         size="md"
         handler={handleOpen}
-        className="bg-[#AFB0DE]"
+        className="bg-[#AFB0DE]
+        
+        w-full md:w-3/4 lg:w-3/5 2xl:w-2/5 min-w-[90%] md:min-w-[75%] 
+        
+        lg:min-w-[50%]  lg:max-w-[50%]
+        
+        2xl:min-w-[40%]  2xl:max-w-[40%]
+        
+        max-w-[90%] md:max-w-[75%]  
+        
+        
+        "
         style={{
-          borderRadius: '22px',
+          borderRadius: '14px',
           fontFamily: 'GothamRnd',
         }}
       >
-        <div className="my-8 w-full flex flex-col gap-8 md:gap-4 items-center">
+        <div className="my-6 mb-8 w-full flex flex-col gap-8 md:gap-4 items-center space-y-6">
           <p
-            className="text-black text-lg text-center"
+            className="text-black px-4 text-base md:text-lg text-center"
             style={{
               fontFamily: 'Gotham Book',
             }}
           >
-            ¿Estas conectando con estas preguntas?
+            ¿Estás conectando con estas preguntas?
           </p>
           <p
             className="text-gray-900 text-xl max-w-xl 
@@ -149,21 +160,23 @@ export default function Card() {
             <b className="font-bold">cartas personalizadas</b> y opciones de
             <b className="font-bold"> venta al por mayor</b>?
           </p>
-          <div className="flex flex-row justify-evenly w-full items-center px-4 w-md">
-            <img
-              src={descPhoto}
-              alt="Desconectados"
-              className="w-36 h-36 md:w-48 md:h-48"
-            />
-            <img
-              src={destPhoto}
-              alt="Destapados"
-              className="w-36 h-36 md:w-48 md:h-48"
-            />
+          <div className="flex flex-col items-center w-full px-4">
+            <div className="flex flex-row justify-evenly w-full items-center px-4 w-md">
+              <img
+                src={descPhoto}
+                alt="Desconectados"
+                className="w-36 h-36 md:w-48 md:h-48"
+              />
+              <img
+                src={destPhoto}
+                alt="Destapados"
+                className="w-36 h-36 md:w-48 md:h-48"
+              />
+            </div>
+            <p className="text-gray-900 text-xl max-w-md px-2 text-center mb-1 md:mb-2">
+              Podemos ser tu próximo regalo empresarial, hecho a tu medida
+            </p>
           </div>
-          <p className="font-bold text-gray-900 text-xl max-w-md px-2 text-center">
-            Podemos ser tu próximo regalo empresarial, hecho a tu medida
-          </p>
           <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
             <a href="https://www.enpalabras.com.ar" target="_blank">
               <button

@@ -72,7 +72,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
 
   return (
     <>
-      <div className="card-stack h-full md:h-auto">
+      <div className="card-stack h-full md:h-auto ">
         <div className="card stacked"></div>
         <div className="card stacked"></div>
         <div className="card stacked"></div>
@@ -124,11 +124,11 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
         </div>
       </div>
       <div
-        className="h-full md:h-auto flex justify-end gap-12 
-      md:gap-0 items-end flex-col w-full"
+        className="h-full md:h-auto flex justify-end gap-3 
+      sm:gap-0 items-end flex-col w-full max-w-3xl"
       >
         <button
-          className="mx-auto question-button text-3xl"
+          className="mx-auto question-button text-xl"
           onClick={handleOpen}
         >
           Empezar
@@ -138,10 +138,10 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
       <Dialog
         open={open}
         handler={handleOpen}
-        className="bg-[#AFB0DE]"
+        className="bg-[#AFB0DE] md:!min-w-[500px] md:!max-w-[500px]"
         style={{
-          borderRadius: '22px',
-          fontFamily: 'GothamRnd',
+          borderRadius: '14px',
+          fontFamily: 'Gotham Book',
         }}
       >
         <div className="my-8 w-full flex flex-col gap-8 items-center">
@@ -151,8 +151,8 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
             </p>
           </div>
           <div
-            className={`flex flex-col md:flex-row gap-4 md:gap-8 w-4/5
-              justify-around md:items-center px-4 select-none sm:w-2/3
+            className={`flex flex-col md:flex-row gap-4 md:gap-8 w-full sm:w-4/5 md:w-3/5
+              justify-center md:items-center px-4 select-none 
             `}
           >
             <div className="flex flex-row items-center">
@@ -178,7 +178,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 htmlFor="empresa"
                 style={{
                   userSelect: 'none',
-                  fontFamily: 'Gotham Bold',
+                  fontFamily: 'Gotham Book',
                 }}
                 className="text-md text-gray-900 font-light text-lg sm:font-base"
               >
@@ -208,7 +208,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 htmlFor="personal"
                 style={{
                   userSelect: 'none',
-                  fontFamily: 'Gotham Bold',
+                  fontFamily: 'Gotham Book',
                 }}
                 className="text-md text-gray-900 font-light text-lg sm:font-base"
               >
@@ -216,7 +216,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
               </label>
             </div>
           </div>
-          {
+          {error.error && (
             <div className="text-center">
               <p
                 className={`text-sm text-red-500 ${
@@ -226,8 +226,8 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
                 {error.message}
               </p>
             </div>
-          }
-          <div className="flex flex-row gap-6 justify-end items-end px-4 w-md">
+          )}
+          <div className="flex flex-row gap-6 justify-around items-center w-4/5 md:w-3/5">
             <div className="w-full text-gray-900 rounded-none">
               <Input
                 crossOrigin={true}

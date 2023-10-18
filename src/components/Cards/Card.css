@@ -6,13 +6,13 @@
 }
 
 .card {
-  border: solid 0.1px rgba(0, 0, 0, 0.4);
+  border: solid 0.1px rgba(0, 0, 0, 0.3);
   aspect-ratio: 2/3;
   /* max-height: 900px; */
   /* min-height: 40dvh; */
   background: #fff;
   border-radius: 22px;
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-2);
   grid-area: gui / challenges;
   transition: transform 0.3s;
   font-family: 'Gotham Bold', 'Gotham Ultra', 'Helvetica Neue', Helvetica, Arial,
@@ -28,7 +28,7 @@
   text-transform: uppercase;
   cursor: pointer;
   padding: 15px 25px;
-  border-radius: 22px;
+  border-radius: 14px;
   font-size: 1.5em;
   min-width: 300px;
   max-width: 80vw;

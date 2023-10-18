@@ -1,8 +1,8 @@
 const InstagramIcon = () => {
   return (
     <svg
-      width="40px"
-      height="40px"
+      width="35px"
+      height="35px"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,8 @@ const InstagramIcon = () => {
 const TikTokIcon = () => {
   return (
     <svg
-      width="40px"
-      height="40px"
+      width="35px"
+      height="35px"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +45,8 @@ const TikTokIcon = () => {
 const CartIcon = () => {
   return (
     <svg
-      width="40px"
-      height="40px"
+      width="35px"
+      height="35px"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -66,11 +66,11 @@ export default function Footer() {
   return (
     <footer
       className="flex flex-row justify-end items-center w-full
-    text-2xl"
+    text-2xl max-w-3xl mx-auto mt-1"
     >
       <div
         className="flex flex-row justify-start items-center w-full
-    text-2xl gap-2 md:gap-4 ml-2 md:ml-8"
+    text-2xl gap-2 md:gap-4 px-4"
       >
         <a
           href="https://www.enpalabras.com.ar"
@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
       <div
         className="flex flex-row justify-end items-center w-full
-    text-2xl gap-2 md:gap-4 mr-2 md:mr-8"
+    text-2xl gap-2 md:gap-4 px-4"
       >
         <a
           href="https://www.instagram.com/enpalabrass"
