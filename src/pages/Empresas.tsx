@@ -1,5 +1,5 @@
 import Card from '../components/Cards/Card'
-import bgImg from '../assets/backgrounds/cieloDef.jpg'
+import bgImg from '../assets/backgrounds/CieloDef.jpg'
 
 export default function Empresas({
   children,
