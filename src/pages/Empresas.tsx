@@ -1,5 +1,5 @@
 import Card from '../components/Cards/Card'
-import bgImg from '../assets/backgrounds/bgEmpresas.png'
+import bgImg from '../assets/backgrounds/bgCielo.jpg'
 
 export default function Empresas({
   children,
@@ -16,10 +16,13 @@ export default function Empresas({
     "
       style={{
         backgroundImage: `${bgColor ? `url(${bgImg})` : 'none'}`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {children}
-      <Card />
+      <Card color={bgColor ? 'white' : 'black'} />
     </main>
   )
 }

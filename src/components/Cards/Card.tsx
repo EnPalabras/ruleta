@@ -4,10 +4,27 @@ import { useState } from 'react'
 import { Dialog } from '@material-tailwind/react'
 import descPhoto from '../../assets/images/desconectados.png'
 import destPhoto from '../../assets/images/destapados.png'
-import audio from '../../assets/audio.mp3'
+import audio from '../../assets/flip.mp3'
 import Footer from '../Footer'
 
-export default function Card() {
+const CancelIcon = () => {
+  return (
+    <svg
+      width="20px"
+      height="20px"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke-width="3"
+      stroke="#000000"
+      fill="none"
+    >
+      <line x1="8.06" y1="8.06" x2="55.41" y2="55.94" />
+      <line x1="55.94" y1="8.06" x2="8.59" y2="55.94" />
+    </svg>
+  )
+}
+
+export default function Card({ color }: { color: string }) {
   const [debounce, setDebounce] = useState(false)
   const [counter, setCounter] = useState(0)
   const [open, setOpen] = useState(false)
@@ -20,7 +37,9 @@ export default function Card() {
 
     const random = Math.floor(Math.random() * PREGUNTAS.length)
 
-    card.innerHTML = `<p></p><p>${PREGUNTAS[random]}</p><p>@enpalabrass</p>`
+    card.innerHTML = `<p></p><p>${PREGUNTAS[random]}</p><p
+      style="font-size:14px; font-weight: 700"
+    >@enpalabrass</p>`
 
     card.style.transform = 'translateY(-1000px) translateX(25px)'
 
@@ -37,17 +56,24 @@ export default function Card() {
   }
 
   const drawCards = () => {
-    const audioElement = new Audio(audio)
+    // const audioElement = new Audio(audio)
+
     setCounter(counter + 1)
     if (counter === 2) {
       handleOpen()
       return
     }
     if (debounce) return
+    // audioElement.play()
+    const audioElement = new Audio(audio)
     audioElement.play()
     setDebounce(true)
     let iterations = 0
     const interval = setInterval(() => {
+      if (iterations < 4) {
+        const audioElement = new Audio(audio)
+        audioElement.play()
+      }
       addCard()
       iterations++
       if (iterations > 4) {
@@ -78,9 +104,9 @@ export default function Card() {
           }}
         >
           <span
-            style={{
-              letterSpacing: '0.1em',
-            }}
+          // style={{
+          //   letterSpacing: '0.1em',
+          // }}
           >
             PREGUNTAS{' '}
           </span>
@@ -119,7 +145,7 @@ export default function Card() {
         <button className="mx-auto question-button text-xl" onClick={drawCards}>
           Siguiente Pregunta
         </button>
-        <Footer />
+        <Footer color={color} />
       </div>
 
       <Dialog
@@ -143,15 +169,21 @@ export default function Card() {
           fontFamily: 'GothamRnd',
         }}
       >
-        <div className="my-6 mb-8 w-full flex flex-col gap-8 md:gap-4 items-center space-y-6">
-          <p
-            className="text-black px-4 text-base md:text-lg text-center"
-            style={{
-              fontFamily: 'Gotham Book',
-            }}
-          >
-            ¿Estás conectando con estas preguntas?
-          </p>
+        <div className="my-6 w-full flex flex-col gap-8 md:gap-4 items-center md:space-y-2">
+          <div className="flex justify-between items-center w-full px-4">
+            <div></div>
+            <p
+              className="text-black px-4 text-sm md:text-lg text-center"
+              style={{
+                fontFamily: 'Gotham Book',
+              }}
+            >
+              ¿Estás conectando con estas preguntas?
+            </p>
+            <button onClick={handleOpen} className="cursor-pointer">
+              <CancelIcon />
+            </button>
+          </div>
           <p
             className="text-gray-900 text-xl max-w-xl 
           px-6 text-center"

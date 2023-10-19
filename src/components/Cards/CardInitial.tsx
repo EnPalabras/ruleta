@@ -72,7 +72,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
 
   return (
     <>
-      <div className="card-stack h-full md:h-auto ">
+      <div className="card-stack h-full md:h-auto">
         <div className="card stacked"></div>
         <div className="card stacked"></div>
         <div className="card stacked"></div>
@@ -89,9 +89,11 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
           }}
         >
           <span
-            style={{
-              letterSpacing: '0.1em',
-            }}
+            style={
+              {
+                // letterSpacing: '0.1em',
+              }
+            }
           >
             PREGUNTAS{' '}
           </span>
@@ -133,7 +135,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
         >
           Empezar
         </button>
-        <Footer />
+        <Footer color="black" />
       </div>
       <Dialog
         open={open}

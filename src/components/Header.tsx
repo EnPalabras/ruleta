@@ -1,6 +1,5 @@
 // import logoImg from '../assets/images/logo.png'
 import logoNegro from '../assets/images/logoNegro.png'
-import logoVioleta from '../assets/images/logoVioleta.png'
 
 // const ArrowLeft = ({ setPhase }: { setPhase: any }) => {
 //   return (
@@ -63,7 +62,7 @@ export default function Header({
   return (
     <nav
       className="flex flex-col justify-between 
-    w-full mt-8 mb-10 items-start min-h-[80px] md:min-h-0
+    w-full mt-8 mb-6 items-start min-h-[80px] md:min-h-0
     max-w-3xl px-0
     select-none
     "
@@ -80,7 +79,7 @@ export default function Header({
         </div>{' '}
         <div className="text-center my-auto items-start w-full max-w-[250px]">
           <img
-            src={bgColor ? logoNegro : logoVioleta}
+            src={logoNegro}
             alt="logo"
             className="
         
@@ -104,7 +103,7 @@ export default function Header({
             peer-checked:after:translate-x-full peer-checked:after:border-white 
             after:content-[''] after:absolute after:top-0.5 after:left-[2px] 
             after:bg-white after:border-gray-300 after:border after:rounded-full 
-            after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#b435d5]"
             ></div>
           </label>
         </div>
@@ -116,7 +115,7 @@ export default function Header({
 export function InitHeader({}: {}) {
   return (
     <nav
-      className="flex flex-col justify-between w-full mt-8 mb-10 items-start min-h-[80px] md:min-h-0
+      className="flex flex-col justify-between w-full mt-8 mb-6  items-start min-h-[80px] md:min-h-0
         select-none
 
     "
@@ -129,7 +128,7 @@ export function InitHeader({}: {}) {
         "
         >
           <img
-            src={logoVioleta}
+            src={logoNegro}
             alt="logo"
             className="
         

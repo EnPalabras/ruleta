@@ -19,7 +19,7 @@ export default function Personas({
       }}
     >
       {children}
-      <Card />
+      <Card color={bgColor ? 'white' : 'black'} />{' '}
     </main>
   )
 }
