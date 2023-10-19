@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Dialog } from '@material-tailwind/react'
 import descPhoto from '../../assets/images/desconectados.png'
 import destPhoto from '../../assets/images/destapados.png'
+import anPhoto from '../../assets/images/anonuevo.png'
+
 import audio from '../../assets/flip.mp3'
 import Footer from '../Footer'
 
@@ -59,7 +61,7 @@ export default function Card({ color }: { color: string }) {
     // const audioElement = new Audio(audio)
 
     setCounter(counter + 1)
-    if (counter === 2) {
+    if (counter === 4) {
       handleOpen()
       return
     }
@@ -139,7 +141,7 @@ export default function Card({ color }: { color: string }) {
         </div>
       </div>
       <div
-        className="h-full md:h-auto flex justify-end  gap-3 
+        className="h-full md:h-auto flex justify-end gap-3 
       sm:gap-0 items-end flex-col w-full"
       >
         <button className="mx-auto question-button text-xl" onClick={drawCards}>
@@ -199,11 +201,15 @@ export default function Card({ color }: { color: string }) {
                 alt="Desconectados"
                 className="w-36 h-36 md:w-48 md:h-48"
               />
+
               <img
                 src={destPhoto}
                 alt="Destapados"
                 className="w-36 h-36 md:w-48 md:h-48"
               />
+            </div>
+            <div className="flex flex-row justify-evenly w-full items-center px-4 w-md">
+              <img src={anPhoto} alt="Año Nuevo" className="w-auto h-32" />
             </div>
             <p className="text-gray-900 text-xl max-w-md px-2 text-center mb-1 md:mb-2">
               Podemos ser tu próximo regalo empresarial, hecho a tu medida

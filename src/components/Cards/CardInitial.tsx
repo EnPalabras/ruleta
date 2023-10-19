@@ -72,6 +72,9 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
 
   return (
     <>
+      {/* <button className="mx-auto question-button text-xl" onClick={handleOpen}>
+        Empezar
+      </button> */}
       <div className="card-stack h-full md:h-auto">
         <div className="card stacked"></div>
         <div className="card stacked"></div>
@@ -126,7 +129,9 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
         </div>
       </div>
       <div
-        className="h-full md:h-auto flex justify-end gap-3 
+        className="
+        h-full
+        md:h-auto flex justify-end gap-3 
       sm:gap-0 items-end flex-col w-full max-w-3xl"
       >
         <button
