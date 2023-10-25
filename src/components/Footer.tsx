@@ -97,7 +97,7 @@ export default function Footer({ color }: { color: string }) {
         </a>
 
         <a
-          href="https://www.tiktok.com/enpalabrass"
+          href="https://www.tiktok.com/@enpalabrass"
           className="p-0 m-0"
           target="_blank"
         >
