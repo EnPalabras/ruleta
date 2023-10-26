@@ -39,7 +39,7 @@ export default function Card({ color }: { color: string }) {
 
     const random = Math.floor(Math.random() * PREGUNTAS.length)
 
-    card.innerHTML = `<p></p><p>${PREGUNTAS[random]}</p><p
+    card.innerHTML = `<p></p><p class="normalText">${PREGUNTAS[random]}</p><p
       style="font-size:14px; font-weight: 700"
     >@enpalabrass</p>`
 

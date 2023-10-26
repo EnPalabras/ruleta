@@ -20,7 +20,7 @@ export const PREGUNTAS: string[] = [
   '¿Qué desearías disfrutar más? ¿Qué podés hacer para lograrlo?',
   '¿Cuál es tu tradición (familiar) favorita?',
   '¿Cuál es el mejor consejo que te dieron?',
-  '¿Con qué tres palabras me describirías? *La persona a tu izquierda contesta esta pregunta',
+  '¿Con qué tres palabras me describirías?<br/><br/><span>La persona a tu izquierda contesta esta pregunta</span>',
   '¿Cuál fue tu primer trabajo después de terminar tu formación?',
   '¿Alguien a quien admires? ¿Por qué?',
   '¿Qué parte de tu rutina esperás con más ganas cada día?',
