@@ -22,7 +22,7 @@ export default function Empresas({
       }}
     >
       {children}
-      <Card color={bgColor ? 'white' : 'black'} />
+      <Card color={bgColor ? 'white' : 'black'} type="EMPRESAS" />
     </main>
   )
 }

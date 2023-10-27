@@ -5,7 +5,7 @@ import { Dialog } from '@material-tailwind/react'
 import descPhoto from '../../assets/images/desconectados.png'
 import destPhoto from '../../assets/images/destapados.png'
 import anPhoto from '../../assets/images/anonuevo.png'
-
+import { SubmitCard } from '../../services/SubmitCard'
 import audio from '../../assets/flip.mp3'
 import Footer from '../Footer'
 
@@ -26,13 +26,15 @@ const CancelIcon = () => {
   )
 }
 
-export default function Card({ color }: { color: string }) {
+export default function Card({ color, type }: { color: string; type: string }) {
   const [debounce, setDebounce] = useState(false)
   const [counter, setCounter] = useState(0)
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(!open)
 
-  const addCard = () => {
+  const email = localStorage.getItem('email') || ''
+
+  const addCard = async (iterations: number) => {
     const card = document.createElement('div')
     card.classList.add('card')
     card.classList.add('drawed')
@@ -55,28 +57,33 @@ export default function Card({ color }: { color: string }) {
     if (stack?.children.length && stack?.children.length > 12) {
       stack.removeChild(stack.children[6])
     }
+
+    if (iterations === 4) {
+      await SubmitCard({
+        email: email || '',
+        question: PREGUNTAS[random],
+        type: type,
+      })
+    }
   }
 
   const drawCards = () => {
-    // const audioElement = new Audio(audio)
-
     setCounter(counter + 1)
     if (counter === 4) {
       handleOpen()
       return
     }
     if (debounce) return
-    // audioElement.play()
     const audioElement = new Audio(audio)
     audioElement.play()
     setDebounce(true)
-    let iterations = 0
+    let iterations: number = 0
     const interval = setInterval(() => {
       if (iterations < 4) {
         const audioElement = new Audio(audio)
         audioElement.play()
       }
-      addCard()
+      addCard(iterations)
       iterations++
       if (iterations > 4) {
         clearInterval(interval)

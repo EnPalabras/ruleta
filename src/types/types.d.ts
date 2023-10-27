@@ -1,5 +1,5 @@
 interface Tirada {
-  date: string
+  // date: string
   email: string | null
   question: string
   type: string
