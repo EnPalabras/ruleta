@@ -73,7 +73,7 @@ export default function Footer({ color }: { color: string }) {
     text-2xl gap-2 md:gap-4 px-4"
       >
         <a
-          href="https://www.enpalabras.com.ar"
+          href="https://www.enpalabrasempresas.com.ar"
           className="p-0 m-0"
           target="_blank"
         >
