@@ -5,7 +5,7 @@ import { Dialog } from '@material-tailwind/react'
 import descPhoto from '../../assets/images/desconectados.png'
 import destPhoto from '../../assets/images/destapados.png'
 import anPhoto from '../../assets/images/anonuevo.png'
-import { SubmitCard } from '../../services/SubmitCard'
+import { SubmitCard, createNewContact } from '../../services/SubmitCard'
 import audio from '../../assets/flip.mp3'
 import Footer from '../Footer'
 
@@ -64,6 +64,7 @@ export default function Card({ color, type }: { color: string; type: string }) {
         question: PREGUNTAS[random],
         type: type,
       })
+      await createNewContact(email)
     }
   }
 

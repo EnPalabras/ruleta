@@ -13,6 +13,8 @@ export async function SubmitCard(tirada: any) {
 }
 
 export const createNewContact = async (email: string) => {
+  if (!email || email === '') return
+
   console.log(email)
   const response = await fetch(
     `https://ruleta-empresa.vercel.app/api/contacts`,
