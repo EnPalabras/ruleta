@@ -36,6 +36,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
   }
 
   const continueAsUser = async (): Promise<void> => {
+    saveToLocal() // Guardar email para usuarios personales también
     //   await uploadContact()
     setPhase('Personal')
   }
@@ -49,14 +50,17 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
         })
         return
       }
+      
+      // Verificar email para ambas opciones
+      if (!email || email.length < 6 || !email.includes('@')) {
+        setError({
+          error: true,
+          message: 'Ingresa un correo válido',
+        })
+        return
+      }
+      
       if (checked.type === 'empresa') {
-        if (!email || email.length < 6 || !email.includes('@')) {
-          setError({
-            error: true,
-            message: 'Ingresa un correo válido',
-          })
-          return
-        }
         await continueAsCompany()
       } else if (checked.type === 'personal') {
         await continueAsUser()
@@ -72,9 +76,6 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
 
   return (
     <>
-      {/* <button className="mx-auto question-button text-xl" onClick={handleOpen}>
-        Empezar
-      </button> */}
       <div className="card-stack h-full md:h-auto">
         <div className="card stacked"></div>
         <div className="card stacked"></div>
@@ -91,15 +92,7 @@ export default function CardInitial({ setPhase }: { setPhase: any }) {
             color: '#AFB0DE',
           }}
         >
-          <span
-            style={
-              {
-                // letterSpacing: '0.1em',
-              }
-            }
-          >
-            PREGUNTAS{' '}
-          </span>
+          <span>PREGUNTAS</span>
           <span>PARA CONECTAR</span>
           <div
             className="bg-black text-white text-left pl-2 pr-8 md:pr-16 py-0.5 leading-[10px]

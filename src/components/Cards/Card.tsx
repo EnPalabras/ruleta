@@ -59,12 +59,16 @@ export default function Card({ color, type }: { color: string; type: string }) {
     }
 
     if (iterations === 4) {
+      // Siempre enviar email sea empresa o personal
       await SubmitCard({
-        email: email || '',
+        email: email,
         question: PREGUNTAS[random],
         type: type,
       })
-      await createNewContact(email)
+      
+      if (email && email !== '') {
+        await createNewContact(email)
+      }
     }
   }
 
